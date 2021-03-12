@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.o">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./css/checkerboard.css') }}">
+    <title>Checkerboard</title>
+    <!-- <style>
+        table tr td{
+        height: 50px;
+        width:50px;
+    }
+    .color1{
+        background-color: black;
+    }
+    .color2{
+        background-color: red;
+    }
+    </style> -->
+</head>
+
+<body>
+    <h1>
+        Welcome!
+    </h1>
+    <div class="container">
+    <table>
+    {% for i in range(x): %}
+        <tr>
+            {% for j in range(y): %}
+                {% if j < y/2 %}
+                    {% if i %2 ==0 %}
+                        <td class="color1"></td>
+                        <td class="color2"></td>
+                    {% else %}
+                        <td class="color2"></td>
+                        <td class="color1"></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
+</body>
+
+</html>
