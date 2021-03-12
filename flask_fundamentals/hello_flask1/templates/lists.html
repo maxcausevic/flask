@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1.o">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="html_table.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="column">First Name</th>
+            <th scope="column">Last Name</th>
+            <th scope="column">Full Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Maxine</td>
+            <td>Causevic</td>
+            <td>Maxine Causevic</td>
+        </tr>
+        <tr>
+            <td>Audrey</td>
+            <td>Pang</td>
+            <td>Audrey Pang</td>
+        </tr>
+        <tr>
+            <td>Kimberly</td>
+            <td>Wiskup</td>
+            <td>Kimberly Wiskup</td>
+        </tr>
+        <tr>
+            <td>Darcy</td>
+            <td>Hooker</td>
+            <td>Darcy Hooker</td>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>{{student.first_name}} {{student.last_name}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</html>
+

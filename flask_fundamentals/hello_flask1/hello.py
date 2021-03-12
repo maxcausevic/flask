@@ -8,11 +8,15 @@ def hello_world():
 def hello(name):
     print(name)
     return render_template("name.html",some_name = name)
+@app.route('/lists')
+def render_lists():
+    students = [
+    {'first_name' : 'Michael', 'last_name' : 'Choi'},
+    {'first_name' : 'John', 'last_name' : 'Supsupin'},
+    {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+    {'first_name' : 'KB', 'last_name' : 'Tonel'}
+]
+    return render_template("lists.html", students = students)
 if __name__=="__main__":  
-    # import statements, maybe some other routes
-    @app.route('/success')
-    def success():
-        return "success"
-    
-app.run(debug=True)    # Run the app in debug mode.
+    app.run(debug=True)    
 
